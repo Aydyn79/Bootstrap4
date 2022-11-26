@@ -6,11 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
+   
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
     <title>Ristorante Con Fusion</title>
 
 </head>
@@ -28,11 +30,14 @@
                     <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span>About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./salvo.html"><span class="fa fa-address-card fa-lg"></span>indexx</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="./anush.html"><span class="fa fa-address-card fa-lg"></span>indexx</a></li> -->
                 
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginDialog">
+                    <!-- <a data-toggle="modal" data-target="#loginDialog">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a> -->
+                    <a role="button" id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -46,7 +51,7 @@
                     <h4 class="modal-title">
                         Login
                     </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button id="closeButton" type="button" class="close">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -68,7 +73,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button onclick="hide_modal();" type="button" class="btn btn-secondary btn-sm ml-auto">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -87,8 +92,8 @@
                     <dl class="row" >
                         <dt class="col-xs-auto col-sm-auto col-md-2 col-lg-2 col-xl-2" style="height:60px">Number of guest</dt>
                         <dd class="row col-xs-auto col-sm-10 col-md-10 col-lg-10 col-xl-10" style="height:60px">
-                            <div class="form-check ml-3">
-                                <input class="form-check-input align-self-bottom" type="radio" name="option" id="option1">
+                            <div class="form-check for-check-primary for-check-solid ml-3">
+                                <input class="custom-control-input align-self-bottom" type="radio" name="option" id="option1">
                                 <label class="form-check-label" for="options1">
                                     1
                                 </label>
@@ -176,8 +181,7 @@
                     title="Or Call us at <br><strong>+234 123567<strong/>"
                     data-placement="bottom" href="#CardReserve">Reserve Table</a> -->
                     <a role="button" 
-                    data-toggle="modal" 
-                    data-target="#CardReserve" 
+                    onclick="show_modal('#CardReserve')"
                     class="btn btn-block nav-link btn-warning btn-lg">  
                     Reserve Table
                     </a>
@@ -348,29 +352,12 @@
             </div>
         </div>
     </footer>
-<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+ <!-- build:js js/main.js -->
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- <script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script> -->
-<script>
-    $("#carouselButton").click(function(){
-        if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-            $("#mycarousel").carousel('pause');
-            $("#carouselButton").children("span").removeClass('fa-pause');
-            $("#carouselButton").children("span").addClass('fa-play');
-        }
-        else if ($("#carouselButton").children("span").hasClass('fa-play')){
-            $("#mycarousel").carousel('cycle');
-            $("#carouselButton").children("span").removeClass('fa-play');
-            $("#carouselButton").children("span").addClass('fa-pause');                    
-        }
-    });
-</script>
+<script src="js/scripts.js"></script>
+<!-- endbuild -->
 </body>
 
 </html>
