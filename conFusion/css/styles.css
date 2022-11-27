@@ -55,7 +55,8 @@ body {
 
 .modal-header {
   background-color: #512DA8;
-  color: #ddd; }
+  color: floralwhite;
+  font-weight: bold; }
 
 .modal-body {
   background-color: #D1C4E9; }

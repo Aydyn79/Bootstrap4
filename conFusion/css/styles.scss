@@ -16,7 +16,8 @@ $carousel-item-height: 300px;
 
 @mixin dark() {
     background-color: $background-dark;
-    color: #ddd;
+    color: floralwhite;
+    font-weight: bold;
 }
 
 @mixin light() {
